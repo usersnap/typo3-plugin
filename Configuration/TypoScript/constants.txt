@@ -1,0 +1,42 @@
+## Define custom categories
+# customsubcategory=general=General Settings
+# customsubcategory=commentbox=Comments
+# customsubcategory=email=Email
+# customsubcategory=tools=Tools
+
+plugin.usersnap {
+	# cat=plugin.usersnap/general/a; type=string; label=apiKey
+	apiKey = 
+	# cat=plugin.usersnap/general/b; type=options[top,middle,bottom]; label=Button Vertical alignment
+	buttonVerticalAlignment = bottom
+	# cat=plugin.usersnap/general/c; type=options[left,right]; label=Button Horizontal alignment
+	buttonHorizontalAlignment = right
+	# cat=plugin.usersnap/general/d; type=options[en,de-informal,de-formal,fr,es,pl,fa,it,jp,ko,hu,da,cz,sk,no,nl,fi,pt]; label=Language
+	language = en
+	# cat=plugin.usersnap/general/e; type=boolean; label=Always visible (not only when logged in to Backend)
+	alwaysVisible = 1
+	# cat=plugin.usersnap/commentbox/e; type=boolean; label=Comment Box
+	commentBox = 1
+	# cat=plugin.usersnap/commentbox/f; type=string; label=Comment Box Placeholder
+	commentBoxPlaceholder = Enter something special here.
+	# cat=plugin.usersnap/email/g; type=boolean; label=Email Box
+	emailBox = 1
+	# cat=plugin.usersnap/email/h; type=string; label=Email Box Placeholder
+	emailBoxPlaceholder = your company email address
+	# cat=plugin.usersnap/tools/a; type=options[none,pen,highlight,note,blackout]; label=Tool 1
+	tool1 = pen
+	# cat=plugin.usersnap/tools/b; type=options[none,pen,highlight,note,blackout]; label=Tool 2
+	tool2 = highlight
+	# cat=plugin.usersnap/tools/c; type=options[none,pen,highlight,note,blackout]; label=Tool 3
+	tool3 = note
+	
+}
+/*
+# cat=plugin.usersnap//i; type=string; label=Email Box Placeholder Value
+	emailBoxPlaceholderValue = user@mycompany.com
+Tool Settings
+First Tool
+Second Tool
+Thrid Tool
+label=options[English, German formal, German informal, French, Spanish, Polish, Farsi, Italian, Japanese, Korean, Hungarian, Danish, Czech, Slovakian, Norwegian, Dutch, Finnish, Portuguese]
+*/

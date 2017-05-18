@@ -1,0 +1,71 @@
+lib.usersnap = COA
+lib.usersnap.10 = TEXT
+lib.usersnap.10.value = var _usersnapconfig = {
+
+lib.usersnap.20 = TEXT
+lib.usersnap.20.value = apiKey: '{$plugin.usersnap.apiKey}',
+lib.usersnap.20.insertData = 1
+
+lib.usersnap.30 = TEXT
+lib.usersnap.30.value = valign: '{$plugin.usersnap.buttonVerticalAlignment}', halign: '{$plugin.usersnap.buttonHorizontalAlignment}', lang: '{$plugin.usersnap.language}',
+lib.usersnap.30.insertData = 1
+
+lib.usersnap.40 = TEXT
+lib.usersnap.40.value = tools: ["{$plugin.usersnap.tool1}", "{$plugin.usersnap.tool2}", "{$plugin.usersnap.tool3}" ],
+
+#lib.usersnap.49 = TEXT
+#lib.usersnap.49.value = ],
+
+[globalVar = LIT:1 = {$plugin.usersnap.commentBox}]
+lib.usersnap.50 = TEXT
+lib.usersnap.50.value = commentBox: true,
+[global]
+[globalVar = LIT:1 = {$plugin.usersnap.commentBox}] AND [{$plugin.usersnap.commentBoxPlaceholder}]
+lib.usersnap.51 = TEXT
+lib.usersnap.51.value = commentBoxPlaceholder: '{$plugin.usersnap.commentBoxPlaceholder}',
+[global]
+[globalVar = LIT:0 = {$plugin.usersnap.commentBox}]
+lib.usersnap.50 = TEXT
+lib.usersnap.50.value = commentBox: false,
+[global]
+[globalVar = LIT:1 = {$plugin.usersnap.emailBox}]
+lib.usersnap.60 = TEXT
+lib.usersnap.60.value = emailBox: true,
+[global]
+[globalVar = LIT:1 = {$plugin.usersnap.emailBox}] AND [{$plugin.usersnap.emailBoxPlaceholder}]
+lib.usersnap.61 = TEXT
+lib.usersnap.61.value = emailBoxPlaceholder: '{$plugin.usersnap.emailBoxPlaceholder}'
+[global]
+
+#[globalVar = LIT:1 = {$plugin.usersnap.emailBox}] AND [globalVar = LIT:1 = {$plugin.usersnap.emailBoxPlaceholderValue}]
+#lib.usersnap.61 = TEXT
+#lib.usersnap.61.value = emailBoxValue: '{$plugin.usersnap.emailBoxPlaceholderValue}'
+#[global]
+
+[globalVar = LIT:0 = {$plugin.usersnap.emailBox}]
+lib.usersnap.60 = TEXT
+lib.usersnap.60.value = emailBox: false
+[global]
+
+lib.usersnap.90 = TEXT
+lib.usersnap.90.value (
+    }; 
+    (function() {
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = '//api.usersnap.com/load/' + _usersnapconfig['apiKey'] + '.js';
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+    })();
+)
+
+lib.usersnap.wrap = <script type="text/javascript">|</script>
+
+[globalVar = TSFE : beUserLogin > 0]
+page.headerData.2999 < lib.usersnap
+[global]
+
+[globalVar = LIT:1 = {$plugin.usersnap.alwaysVisible}]
+page.headerData.2999 < lib.usersnap
+[global]
